@@ -1,0 +1,13 @@
+{%extends "booking/booking_base.html" %}
+
+
+{% block group_content %}
+<h4>Create a new group !</h4>
+
+<form  action="{% url 'booking:create' %}" method="post" id="ClientForm">
+  {% csrf_token %}
+  {% bootstrap_form form%}
+  <input type="submit" class="btn btn-primary btn-large" value="Reserver">
+</form>
+
+{% endblock %}
