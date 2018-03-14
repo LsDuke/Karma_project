@@ -1,0 +1,23 @@
+{%extends "booking/booking_base.html" %}
+{% load bootstrap3 %}
+
+{% block group_content %}
+<h4>Reservez avec Yoshi !</h4>
+
+<form  action="{% url 'booking:create' %}" method="post" id="ClientForm">
+  {% csrf_token %}
+  {% bootstrap_form form%}
+  <div class="form-group">
+  <label for="produit">selectionnez un produit</label>
+  <select class="form-control" name="produit" id="produit" >
+    <option>plongée</option>
+    <option>snorkling</option>
+    <option>openwater</option>
+    <option>yoga</option>
+    <option>apnée</option>
+  </select>
+</div>
+  <input type="submit" class="btn btn-primary btn-large" value="Reserver">
+</form>
+
+{% endblock %}
